@@ -18,17 +18,17 @@ function getComputerChoice() {
   }
 }
 
-function getPlayerChoice() {
+let getPlayerChoice = () => {
   let playerChoice = prompt("What do you roll?");
   playerChoice = playerChoice.toLowerCase();
   console.log("Your choice: " + playerChoice);
   return playerChoice;
-}
+};
 
 //getPlayerChoice();
 
 function rpsRound(playerSelection, computerSelection) {
-  result = "";
+  let result = "";
   if (playerSelection === computerSelection) {
     result = "Tie";
     console.log(result);
@@ -59,16 +59,26 @@ function rpsGame() {
     `Your current score: ${playerScore}, Compuer current score: ${computerScore}`
   );
   console.log("Next round starting...");
+
   rpsRound(getPlayerChoice(), getComputerChoice());
   console.log(
     `Your current score: ${playerScore}, Compuer current score: ${computerScore}`
   );
   console.log("Next round starting...");
+
   rpsRound(getPlayerChoice(), getComputerChoice());
   console.log(
     `Your current score: ${playerScore}, Compuer current score: ${computerScore}`
   );
   console.log("Next round starting...");
+
+  if (playerScore > computerScore) {
+    console.log("You are the winner of the game. (best of 3)");
+  } else if (playerScore === computerScore) {
+    console.log("Nobody wins best of 3");
+  } else {
+    console.log("Computer is the winner of the game. (best of 3)");
+  }
 }
 
 rpsGame();
