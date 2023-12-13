@@ -1,4 +1,5 @@
 # rps
 
 My first Rock Paper Scissor game
-Currently played in console only with prompt to select between Rock, Paper or Scissors.
+
+Now with an awesome UI! (maybe not awesome)
